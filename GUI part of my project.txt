@@ -1,0 +1,113 @@
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Color;
+import javax.swing.UIManager;
+
+public class aman2 extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					aman2 frame = new aman2();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public aman2() {
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(200, 100, 650, 467);
+		contentPane = new JPanel();
+		contentPane.setBackground(UIManager.getColor("Button.background"));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JButton btnNewButton = new JButton("Easy");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new PuzzleEx1().setVisible(true);
+				
+			}
+		});
+		btnNewButton.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+		btnNewButton.setBounds(51, 273, 89, 23);
+		contentPane.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Hard");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new PuzzleEx2().setVisible(true);
+			}
+		});
+		btnNewButton_1.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+		btnNewButton_1.setBounds(473, 273, 89, 23);
+		contentPane.add(btnNewButton_1);
+		
+		JLabel lblNewLabel = new JLabel("Pic Puzzle");
+		lblNewLabel.setBackground(Color.BLUE);
+		lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 30));
+		lblNewLabel.setBounds(237, 47, 213, 100);
+		contentPane.add(lblNewLabel);
+		
+		JButton btnNewButton_2 = new JButton("Intermediate");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new PuzzleEx().setVisible(true);
+			}
+		});
+		btnNewButton_2.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+		btnNewButton_2.setBounds(228, 271, 145, 26);
+		contentPane.add(btnNewButton_2);
+		
+		JLabel lblNewLabel_1 = new JLabel("Please Choose your level of Difficulty");
+		lblNewLabel_1.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+		lblNewLabel_1.setBounds(152, 158, 320, 49);
+		contentPane.add(lblNewLabel_1);
+		
+		JLabel lblx = new JLabel("3X4");
+		lblx.setBounds(81, 307, 46, 14);
+		contentPane.add(lblx);
+		
+		JLabel lblx_1 = new JLabel("4X5");
+		lblx_1.setBounds(289, 307, 46, 14);
+		contentPane.add(lblx_1);
+		
+		JLabel lblx_2 = new JLabel("6X5");
+		lblx_2.setBounds(502, 307, 46, 14);
+		contentPane.add(lblx_2);
+		
+		JButton btnNewButton_3 = new JButton("How to Play?");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new aman4().setVisible(true);
+			}
+		});
+		btnNewButton_3.setFont(new Font("Times New Roman", Font.PLAIN, 9));
+		btnNewButton_3.setBounds(535, 11, 89, 23);
+		contentPane.add(btnNewButton_3);
+	}
+}
